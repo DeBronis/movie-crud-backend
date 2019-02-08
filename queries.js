@@ -13,7 +13,7 @@ module.exports = {
     deleteMovie(id) {
         return database('movies').where('id', id).delete()
     },
-    updateMovie(id) {
-        return database('movies').where('id', id).delete()
+    updateMovie(id, body) {
+        return database('movies').where('id', id).update(body).returning('*')
     }
 }
